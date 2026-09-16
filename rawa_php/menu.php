@@ -8,6 +8,7 @@ require_once __DIR__ . '/connection.php';
             <li><a href="index.php">الرئيسية</a></li>
             <li><a href="about.php">من نحن</a></li>
             <li><a href="myplant.php">نباتاتي</a><li>
+                <li><a href="marketplace.php">متجر المستلزمات</a></li>
                 <li><a href="ather.php">اثر رواء</a><li>
 
             <?php if (isAdmin()): ?>
