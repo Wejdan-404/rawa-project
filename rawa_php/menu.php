@@ -10,7 +10,7 @@ require_once __DIR__ . '/connection.php';
             <li><a href="myplant.php">نباتاتي</a><li>
                 <li><a href="marketplace.php">متجر المستلزمات</a></li>
                 <li><a href="ather.php">اثر رواء</a><li>
-
+                <li><a href="quiz.php">توصية النباتات 🌿</a></li>
             <?php if (isAdmin()): ?>
             <li><a href="admin.php" style="color:var(--green-dark);font-weight:700;">⚙️ لوحة التحكم</a></li>
             <?php endif; ?>
