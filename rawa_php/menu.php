@@ -7,10 +7,11 @@ require_once __DIR__ . '/connection.php';
         <div class="nav-right">
             <li><a href="index.php">الرئيسية</a></li>
             <li><a href="about.php">من نحن</a></li>
-            <li><a href="myplant.php">نباتاتي</a><li>
-                <li><a href="marketplace.php">متجر المستلزمات</a></li>
-                <li><a href="ather.php">اثر رواء</a><li>
-                <li><a href="quiz.php">توصية النباتات 🌿</a></li>
+            <li><a href="myplant.php">نباتاتي</a></li>
+            <li><a href="marketplace.php">متجر المستلزمات</a></li>
+            <li><a href="ather.php">اثر رواء</a></li>
+            <li><a href="quiz.php">توصية النباتات 🌿</a></li>
+            <li><a href="ai_doctor.php" style="color:var(--green-dark);font-weight:700;">طبيب النباتات 🩺</a></li>
             <?php if (isAdmin()): ?>
             <li><a href="admin.php" style="color:var(--green-dark);font-weight:700;">⚙️ لوحة التحكم</a></li>
             <?php endif; ?>
