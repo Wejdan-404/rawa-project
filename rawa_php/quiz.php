@@ -1,6 +1,7 @@
 <?php 
 include 'connection.php';
-include 'header.php';
+include_once 'header.php';
+include_once 'menu.php';
 ?>
 <style>
 .quiz-container {
