@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "متجر مستلزمات العناية";
-require_once 'header.php';
+include_once 'header.php';
+include_once 'menu.php';
 ?>
 
 <style>
