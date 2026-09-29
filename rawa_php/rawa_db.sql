@@ -123,6 +123,22 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`, `address`, `mobile`, `is_admin`, `creation_date`) VALUES
 (1, 'أدمن', 'رواء', 'admin@rawa.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'الطائف', '0500000000', 1, '2026-05-29 05:59:24');
 
+-- --------------------------------------------------------
+
+--
+-- بنية الجدول `plant_doctor_logs` (خاص بفحوصات طبيب النباتات بالذكاء الاصطناعي)
+--
+
+CREATE TABLE `plant_doctor_logs` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `image_path` varchar(255) NOT NULL,
+  `diagnosis_status` varchar(100) DEFAULT NULL,
+  `disease_name` varchar(255) DEFAULT NULL,
+  `treatment` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -156,6 +172,13 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `plant_doctor_logs`
+--
+ALTER TABLE `plant_doctor_logs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_doctor_user` (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -184,6 +207,12 @@ ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `plant_doctor_logs`
+--
+ALTER TABLE `plant_doctor_logs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- قيود الجداول المُلقاة.
 --
 
@@ -200,6 +229,13 @@ ALTER TABLE `offer`
 ALTER TABLE `reservation`
   ADD CONSTRAINT `fk_reservation_offer` FOREIGN KEY (`offer_id`) REFERENCES `offer` (`id`),
   ADD CONSTRAINT `fk_reservation_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
+-- قيود الجداول `plant_doctor_logs`
+--
+ALTER TABLE `plant_doctor_logs`
+  ADD CONSTRAINT `fk_doctor_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
