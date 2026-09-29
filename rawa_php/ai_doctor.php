@@ -9,7 +9,7 @@ $result = null;
 $error = null;
 
 // ضعي مفتاح Gemini API الخاص بكِ هنا
-$gemini_api_key = "AQ.Ab8RN6KMdVE8u-3nCIgX7mkYwtj3JyXRvss35MFwfsSDSsDj_g";
+$gemini_api_key = "AQ.Ab8RN6LAxKHzlBzxIYaFr85J3bE24ya4Skjm6v3c9Sm2icARxA";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['plant_image'])) {
     $file = $_FILES['plant_image'];
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['plant_image'])) {
             }";
 
             // استخدام النموذج المعتمد: gemini-2.5-flash
-            $endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . trim($gemini_api_key);
+            $endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=" . trim($gemini_api_key);
 
             $payload = [
                 "contents" => [
