@@ -3,7 +3,8 @@ include('connection.php');
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-include('header.php');
+include_once 'header.php';
+include_once 'menu.php';
 
 $result = null;
 $error = null;
